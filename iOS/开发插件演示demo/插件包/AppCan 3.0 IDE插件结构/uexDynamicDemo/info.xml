@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<uexplugins>
+    <plugin
+        uexName="uexDynamicDemo" version="3.0" build="0">
+        <info>build 0:插件开发uexDynamicDemo功能</info>
+    </plugin>
+</uexplugins>
