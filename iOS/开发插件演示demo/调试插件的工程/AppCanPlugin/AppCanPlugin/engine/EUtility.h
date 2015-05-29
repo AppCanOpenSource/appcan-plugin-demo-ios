@@ -29,6 +29,9 @@ void PluginLog(NSString *format, ...);
 + (CGRect)brwViewFrame:(EBrowserView*)inBrwView;
 + (NSURL*)brwViewUrl:(EBrowserView*)inBrwView;
 + (void)brwView:(EBrowserView*)inBrwView addSubview:(UIView*)inSubView;
+//2015-5-6
++ (void)brwView:(EBrowserView*)inBrwView addSubviewToScrollView:(UIView*)inSubView;
+
 + (void)brwView:(EBrowserView*)inBrwView evaluateScript:(NSString*)inScript;
 + (void)brwView:(EBrowserView*)inBrwView presentModalViewController:(UIViewController *)modalViewController animated:(BOOL)animated;
 + (BOOL)isIpad;
@@ -63,5 +66,7 @@ void PluginLog(NSString *format, ...);
 +(void)evaluatingJavaScriptInFrontWnd:(NSString*)script_;
 +(NSString*)getCachePath:(NSString*)fileName;
 +(void)writeLog:(NSString*)inLog;
+//20140616 softToken
++(NSString*)md5SoftToken;
 +(void)setRootViewGestureRecognizerEnabled:(BOOL)isEnable;
 @end
