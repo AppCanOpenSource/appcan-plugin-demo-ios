@@ -1,1 +1,0 @@
-在使用”调试插件的工程”时,libAppCanEngine.a为真机和模拟器通用的引擎静态库，libAppCanEngine_device.a为真机专用，libAppCanEngine_simulator.a为模拟器专用。默认使用libAppCanEngine.a

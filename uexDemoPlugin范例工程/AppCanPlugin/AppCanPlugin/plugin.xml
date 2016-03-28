@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<uexplugins>
+    <plugin name="uexDemoPlugin">
+        <method name="helloWorld"></method>
+        <method name="sendValue"></method>
+        <method name="sendJSONValue"></method>
+        <method name="doCallback"></method>
+        <method name="doSyncCallback" sync="true"></method>
+        <method name="addView"></method>
+        <method name="removeView"></method>
+        <method name="presentController"></method>
+    </plugin>
+</uexplugins>
