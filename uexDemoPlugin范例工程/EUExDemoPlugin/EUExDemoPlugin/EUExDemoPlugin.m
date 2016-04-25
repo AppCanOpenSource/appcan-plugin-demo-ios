@@ -100,6 +100,9 @@ static NSDictionary *AppLaunchOptions;
     NSLog(@"json : %@ class : %@",[json description],[[json class] description]);
 }
 
+//利用构造JS脚本进行JS回调的方法
+
+/*
 - (void)doCallback:(NSMutableArray *)inArguments{
     NSDictionary *dict = @{
                            @"key":@"value"
@@ -108,18 +111,28 @@ static NSDictionary *AppLaunchOptions;
     //[dict JSONFragment] 可以把NSString NSDictionary NSArray 转换成JSON字符串
     NSString *jsStr = [NSString stringWithFormat:@"if(uexDemoPlugin.cbDoCallback){uexDemoPlugin.cbDoCallback('%@')}",[dict JSONFragment]];
     [EUtility brwView:self.meBrwView evaluateScript:jsStr];
-    //或者用以下已经封装好的方法,可以省略构造JS脚本的步骤
-    /*
-     [EUtility uexPlugin:@"uexDemoPlugin"
-          callbackByName:@"cbDoCallback"
-              withObject:dict
-                 andType:uexPluginCallbackWithJsonString
-                inTarget:self.meBrwView];
-     */
-    //也可以考虑将回调方法进行适当的封装，方便复用
-    //[self callbackJSONWithName:@"cbDoCallback" object:dict];
-    
+
 }
+*/
+
+//利用JavaScriptCore进行回调的方法
+//注意这种回调方式只支持3.3引擎
+
+- (void)doCallback:(NSMutableArray *)inArguments{
+    NSDictionary *dict = @{
+                           @"key":@"value"
+                           };
+    
+    //构造参数数组
+    //[dict JSONFragment] 可以把NSString NSDictionary NSArray 转换成JSON字符串
+    NSArray * args = [NSArray arrayWithObjects:[dict JSONFragment],nil];
+    [EUtility browserView:self.meBrwView callbackWithFunctionKeyPath:@"uexDemoPlugin.cbDoCallback" arguments:args completion:^(JSValue *returnValue) {
+        if (returnValue) {
+            NSLog(@"回调成功!");
+        }
+    }];
+}
+
 
 - (NSDictionary *)doSyncCallback:(NSMutableArray *)inArguments{
 
@@ -191,11 +204,22 @@ static NSDictionary *AppLaunchOptions;
  *  @param obj      回调的对象
  */
 - (void)callbackJSONWithName:(NSString *)funcName object:(id)obj{
-    [EUtility uexPlugin:@"uexDemoPlugin"
-         callbackByName:funcName
-             withObject:obj
-                andType:uexPluginCallbackWithJsonString
-               inTarget:self.meBrwView];
+    //只有3.3引擎才支持此方法,需要先进行判断
+    if([EUtility respondsToSelector:@selector(browserView:callbackWithFunctionKeyPath:arguments:completion:)]){
+        
+        [EUtility browserView:self.meBrwView
+  callbackWithFunctionKeyPath:[NSString stringWithFormat:@"uexDemoPlugin.%@",funcName]
+                    arguments:[NSArray arrayWithObjects:[obj JSONFragment], nil]
+                   completion:nil];
+    }else{
+        
+        [EUtility uexPlugin:@"uexDemoPlugin"
+             callbackByName:funcName
+                 withObject:obj
+                    andType:uexPluginCallbackWithJsonString
+                   inTarget:self.meBrwView];
+    }
+
 }
 
 
