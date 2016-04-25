@@ -60,9 +60,9 @@ void PluginLog(NSString *format, ...);
             completion:^(JSValue *returnValue) {
                 if (returnValue) {
                     NSLog(@"函数执行成功!,返回值为:%@",returnValue);
-            }else{
-                NSLog(@"函数执行失败!");
-            }
+                }else{
+                    NSLog(@"函数执行失败!");
+                }
  }];
  
  *
