@@ -35,25 +35,23 @@ void PluginLog(NSString *format, ...);
 
 
 /**
- *  调用网页中的JS函数
- *
- *  @param brwView    回调的网页
- *  @param JSKeyPath  函数的路径,比如@"uexWidget.onSuspend"
- *  @param arguments  调用的参数数组,此NSArray中的每一个元素代表一个参数. arguments可为空
- *  @discussion arguments中的每个元素都必须能够被转换为JSValue 详见https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/
- *  @param completion JS函数执行完毕之后,会执行此Block.此Block永远会在主线程被执行.
- *  @discussion 此Block有一个JSValue类型的参数returnValue
- 如果returnValue为nil,代表调用失败
- 如果网页中的JS函数没有返回值,returnValue为一个代表<code>undefined</code>的JSValue,而不是nil
- 如果网页中的JS函数有返回值，则returnValue为此返回值
- *
- *  @example
- 
- //下列方法相当于在root页面中执行如下JS
- <code>
- var rValue = uexMyPlugin.myCallback("stringParam",2,{"key":"value"});
- </code>
- //并在执行完成之后,调用completion Block,Block的参数是由<code>rValue</code>转换而来的JSValue
+*  调用网页中的JS函数
+*
+*  @param brwView    回调的网页
+*  @param JSKeyPath  函数的路径,比如@"uexWidget.onSuspend"
+*  @param arguments  调用的参数数组,此NSArray中的每一个元素代表一个参数. arguments可为空
+*  @discussion arguments中的每个元素都必须能够被转换为JSValue 详见https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/
+*  @param completion JS函数执行完毕之后,会执行此Block.此Block永远会在主线程被执行.
+*  @discussion 此Block有一个JSValue类型的参数returnValue
+        如果returnValue为nil,代表调用失败
+        如果网页中的JS函数没有返回值,returnValue为一个代表<code>undefined</code>的JSValue,而不是nil
+        如果网页中的JS函数有返回值，则returnValue为此返回值
+* 
+*  @example
+@code
+//下列方法相当于在root页面中执行如下JS
+//  => var rValue = uexMyPlugin.myCallback("stringParam",2,{"key":"value"});
+//并在执行完成之后,调用completion Block,Block的参数是由<code>rValue</code>转换而来的JSValue
  
  [EUtility browserView:[EUtility rootBrwoserView] callbackWithFunctionKeyPath:@"uexMyPlugin.myCallback"
              arguments:@[@"stringParam",@2,@{@"key":@"value"}]
@@ -64,9 +62,10 @@ void PluginLog(NSString *format, ...);
                     NSLog(@"函数执行失败!");
                 }
  }];
- 
- *
- */
+@endcode
+*
+*  @warning 此方法为3.3引擎新增,3.2引擎请用brwView:evaluateScript:或者uexPlugin:callbackByName:withObject:andType:inTarget:方法
+*/
 + (void)browserView:(EBrowserView *)brwView callbackWithFunctionKeyPath:(NSString *)JSKeyPath arguments:(NSArray *)arguments completion:(void (^)(JSValue *returnValue))completion;
 
 #pragma mark 在指定网页中执行JS脚本
@@ -111,6 +110,34 @@ void PluginLog(NSString *format, ...);
  *  @param script 需要执行的JS脚本
  */
 + (void)evaluatingJavaScriptInFrontWnd:(NSString*)script;
+
+#pragma mark 执行JS脚本的进一步封装
+
+typedef NS_ENUM(NSInteger,uexPluginCallbackType){
+    uexPluginCallbackWithJsonString,//回调json字符串（网页端需要首先JSON.parse才能使用）
+    uexPluginCallbackWithJsonObject //回调json对象（网页的可以直接使用）
+    
+};
+
+extern NSString * const cUexPluginCallbackInRootWindow;
+extern NSString * const cUexPluginCallbackInFrontWindow;
+
+/**
+ *  @deprecated 3.3引擎推荐使用browserView:callbackWithFunctionKeyPath:arguments:方法
+ *  @method 回调网页js
+ *
+ *  @param pluginName   回调的插件名
+ *  @param functionName 回调的方法名
+ *  @param obj          回调给网页的对象（NSDictionary、NSArray、NSString、NSNumber,nil)
+ *  @param type         回调的方式（json字符串还是json对象）
+ *  @param targetBrwView 要回调的网页 请传cUexPluginCallbackTargetRootWindow(回调给起始Window）cUexPluginCallbackTargetFrontWindow(回调给最前端Window) 或者(EBrowserView *)实例
+ *
+ *  @example [EUtility uexPlugin:@"uexDemo" callbackByName:@"cbOpen" withObject:@{@"result":@"success"} andType:uexPluginCallbackWithJsonString inTarget:self.meBrwView];//,回调给当前网页
+ *  @example [EUtility uexPlugin:@"uexDemo" callbackByName:@"cbOpen" withObject:@{@"result":@"success"} andType:uexPluginCallbackWithJsonString inTarget:cUexPluginCallbackInRootWindow];//回调给root窗口
+ *
+ */
++ (void)uexPlugin:(NSString *)pluginName callbackByName:(NSString *)functionName withObject:(id)obj andType:(uexPluginCallbackType)type inTarget:(id)target;
+
 
 
 #pragma mark - Plugin Bundle 插件资源Bundle的相关方法
@@ -172,7 +199,7 @@ void PluginLog(NSString *format, ...);
 #pragma mark 在指定的网页中present一个viewController
 /**
  *  在指定的网页中present一个viewController
- *
+ *  
  *  @warning 此方法仅限3.3引擎。旧引擎请用+ (void)brwView:(EBrowserView*)inBrwView presentModalViewController:(UIViewController *)modalViewController animated:(BOOL)animated;
  *
  *  @param inBrwView               指定的网页对象
@@ -263,8 +290,6 @@ void PluginLog(NSString *format, ...);
 @end
 
 #pragma mark - 引擎私有方法
-
-
 @interface EUtility(Private)
 /**
  *  获取插件的语言包实例
@@ -309,30 +334,7 @@ void PluginLog(NSString *format, ...);
 
 @interface EUtility(Deprecated)
 
-typedef NS_ENUM(NSInteger,uexPluginCallbackType){
-    uexPluginCallbackWithJsonString,//回调json字符串（网页端需要首先JSON.parse才能使用）
-    uexPluginCallbackWithJsonObject //回调json对象（网页的可以直接使用）
-    
-};
 
-extern NSString * const cUexPluginCallbackInRootWindow;
-extern NSString * const cUexPluginCallbackInFrontWindow;
-
-/**
- *  @deprecated 推荐使用browserView:callbackWithFunctionKeyPath:arguments:方法
- *  @method 回调网页js
- *
- *  @param pluginName   回调的插件名
- *  @param functionName 回调的方法名
- *  @param obj          回调给网页的对象（NSDictionary、NSArray、NSString、NSNumber,nil)
- *  @param type         回调的方式（json字符串还是json对象）
- *  @param targetBrwView 要回调的网页 请传cUexPluginCallbackTargetRootWindow(回调给起始Window）cUexPluginCallbackTargetFrontWindow(回调给最前端Window) 或者(EBrowserView *)实例
- *
- *  @example [EUtility uexPlugin:@"uexDemo" callbackByName:@"cbOpen" withObject:@{@"result":@"success"} andType:uexPluginCallbackWithJsonString inTarget:self.meBrwView];//,回调给当前网页
- *  @example [EUtility uexPlugin:@"uexDemo" callbackByName:@"cbOpen" withObject:@{@"result":@"success"} andType:uexPluginCallbackWithJsonString inTarget:cUexPluginCallbackInRootWindow];//回调给root窗口
- *
- */
-+ (void)uexPlugin:(NSString *)pluginName callbackByName:(NSString *)functionName withObject:(id)obj andType:(uexPluginCallbackType)type inTarget:(id)target;
 
 
 
