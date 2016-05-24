@@ -62,7 +62,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		GUiQ9mdYMxoi6rdL1rnBfeVZMVA=
+		HYBsg39U5vnNfYNXPVUItxPrd9k=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -76,69 +76,181 @@
 	<key>files2</key>
 	<dict>
 		<key>Headers/MASCompositeConstraint.h</key>
-		<data>
-		jxkzOqzaDa8TlXXAs+eIb8Fp69k=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			jxkzOqzaDa8TlXXAs+eIb8Fp69k=
+			</data>
+			<key>hash2</key>
+			<data>
+			7Th6d8GviuUGks4YSDfOdfBulVljMz2EO6NKzwHCWec=
+			</data>
+		</dict>
 		<key>Headers/MASConstraint.h</key>
-		<data>
-		XObnHbhNIt1qG30w9yfHLRUNhSc=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			XObnHbhNIt1qG30w9yfHLRUNhSc=
+			</data>
+			<key>hash2</key>
+			<data>
+			YIQiR8mx0IXSWqq6u7ksU+PPkZAytb51rQCGSfnmcQk=
+			</data>
+		</dict>
 		<key>Headers/MASConstraintMaker.h</key>
-		<data>
-		ftphmQqTW0eU+ds5g2c9xFZ8fv8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			ftphmQqTW0eU+ds5g2c9xFZ8fv8=
+			</data>
+			<key>hash2</key>
+			<data>
+			r9+lFCgWDqZrCJ55B3LmOMVw/uo2a10LtAk2dL3g87E=
+			</data>
+		</dict>
 		<key>Headers/MASLayoutConstraint.h</key>
-		<data>
-		WKmhqYS9iEiXofQZHRaJ4z6LCTY=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			WKmhqYS9iEiXofQZHRaJ4z6LCTY=
+			</data>
+			<key>hash2</key>
+			<data>
+			ViY8n6YbP/VwaIPXuOajR7IB7KDvx2T4vzx+oDFtkeE=
+			</data>
+		</dict>
 		<key>Headers/MASUtilities.h</key>
-		<data>
-		96cU94gmaZlmTIbsrG49+paKUvQ=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			96cU94gmaZlmTIbsrG49+paKUvQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			3dCrpgQLm1EGZWEgESNVDOvfyWZErQPI62j0ErjJsgM=
+			</data>
+		</dict>
 		<key>Headers/MASViewAttribute.h</key>
-		<data>
-		YkvbTfeGIn8e9gvlaohVlXqXCBw=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			YkvbTfeGIn8e9gvlaohVlXqXCBw=
+			</data>
+			<key>hash2</key>
+			<data>
+			SuvYIRzJWYqp3hsP0dnwCF6gZSABRFN4wwG8jlZfJcI=
+			</data>
+		</dict>
 		<key>Headers/MASViewConstraint.h</key>
-		<data>
-		QaOiNpl10DhLbA1ZI3SyP3gNbU4=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			QaOiNpl10DhLbA1ZI3SyP3gNbU4=
+			</data>
+			<key>hash2</key>
+			<data>
+			FcdPoZYQhyfwETZydvL4xEZGATCtt290PDVXCMwN20A=
+			</data>
+		</dict>
 		<key>Headers/Masonry.h</key>
-		<data>
-		YtlpHMmj7Orog0mkO6Ygs0cIGOc=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			YtlpHMmj7Orog0mkO6Ygs0cIGOc=
+			</data>
+			<key>hash2</key>
+			<data>
+			PI9NJYv85hb3nYtcteZ56JasBOWwQkY8sK0TObZf4bM=
+			</data>
+		</dict>
 		<key>Headers/NSArray+MASAdditions.h</key>
-		<data>
-		7NTZ0LH2oREM6WO+olZctnIKYl4=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			7NTZ0LH2oREM6WO+olZctnIKYl4=
+			</data>
+			<key>hash2</key>
+			<data>
+			wsOEIbMLSNDnABqV3E1VJPTMJKPhjkCCXtBFWX81Quc=
+			</data>
+		</dict>
 		<key>Headers/NSArray+MASShorthandAdditions.h</key>
-		<data>
-		xEkzZE/vrWBujjUj56udKkRGWVI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			xEkzZE/vrWBujjUj56udKkRGWVI=
+			</data>
+			<key>hash2</key>
+			<data>
+			HJZuZ2t9uT2sPb12Oa9oF+BcV9Hb4aT/DMcfQyrVlBI=
+			</data>
+		</dict>
 		<key>Headers/NSLayoutConstraint+MASDebugAdditions.h</key>
-		<data>
-		EqHa1iE2C47k65XiAxjsXWIgREk=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			EqHa1iE2C47k65XiAxjsXWIgREk=
+			</data>
+			<key>hash2</key>
+			<data>
+			oCgZM+sTxySa+pwGpwJNNy3AR4bURHg9XQQVGrZlwG4=
+			</data>
+		</dict>
 		<key>Headers/View+MASAdditions.h</key>
-		<data>
-		1eTeQxSo8F4BGpqssvdMXMVChHo=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			1eTeQxSo8F4BGpqssvdMXMVChHo=
+			</data>
+			<key>hash2</key>
+			<data>
+			oG4nQNbBkvBEGqxtNE2WdS24vUmd2U0o9Xt1nI9cK3s=
+			</data>
+		</dict>
 		<key>Headers/View+MASShorthandAdditions.h</key>
-		<data>
-		hNE3nekO2+wI+cu8aINoq9Suob8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			hNE3nekO2+wI+cu8aINoq9Suob8=
+			</data>
+			<key>hash2</key>
+			<data>
+			2daV4WIjQvP8T1YDanV5WKTyCxRuWi0iqBwk/G6+L88=
+			</data>
+		</dict>
 		<key>Headers/ViewController+MASAdditions.h</key>
-		<data>
-		a/jd+9CuBN3EvyQXBgS3corXWsw=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			a/jd+9CuBN3EvyQXBgS3corXWsw=
+			</data>
+			<key>hash2</key>
+			<data>
+			XxBkWMf2EZAGq0fyULDwEBjqf7Dd1kd7pgVHThxqil8=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
-		<data>
-		M8UvFUQyBUbHmjWh3Ya+E9NRiyw=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			M8UvFUQyBUbHmjWh3Ya+E9NRiyw=
+			</data>
+			<key>hash2</key>
+			<data>
+			1qCH3gK1bk/WPp72V97HkgX2LyHJNGhltl9ng88cOQs=
+			</data>
+		</dict>
 		<key>PrivateHeaders/MASConstraint+Private.h</key>
-		<data>
-		yDVHhTuKOeYmau+GOsL8sR+waRI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			yDVHhTuKOeYmau+GOsL8sR+waRI=
+			</data>
+			<key>hash2</key>
+			<data>
+			Y257iWUQfUbPi7t/bXCLP0buDyCp7NopS67zJmDJ6dE=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>
