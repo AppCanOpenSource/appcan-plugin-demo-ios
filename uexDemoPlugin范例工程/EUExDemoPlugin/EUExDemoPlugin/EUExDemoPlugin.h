@@ -22,12 +22,12 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "EUExBase.h"
+
 @interface EUExDemoPlugin : EUExBase
 
 
 
 
 - (void)dismissViewController;
-- (void)callbackJSONWithName:(NSString *)funcName object:(id)obj;
+
 @end

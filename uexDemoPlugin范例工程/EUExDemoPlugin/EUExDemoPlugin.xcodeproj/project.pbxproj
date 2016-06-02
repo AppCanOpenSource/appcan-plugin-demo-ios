@@ -15,6 +15,7 @@
 		42CC5DBE1CA9386300A03D57 /* SVProgressHUD.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4267EE0D1CA92F5A00BD7117 /* SVProgressHUD.bundle */; };
 		42CC5DBF1CA9386500A03D57 /* Masonry.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4267EE0E1CA92FB200BD7117 /* Masonry.framework */; };
 		42CEF7811CA688E20056247A /* uexDemoPluginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CEF7801CA688E20056247A /* uexDemoPluginViewController.m */; };
+		42D7F74B1CFFCE3800447B4C /* AppCanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D7F74A1CFFCE3800447B4C /* AppCanKit.framework */; };
 		42FCA0971CA4CB0700DF3E3E /* EUExDemoPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FCA0961CA4CB0700DF3E3E /* EUExDemoPlugin.m */; };
 /* End PBXBuildFile section */
 
@@ -52,8 +53,6 @@
 		4267EE0B1CA92F4C00BD7117 /* libSVProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSVProgressHUD.a; sourceTree = "<group>"; };
 		4267EE0D1CA92F5A00BD7117 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		4267EE0E1CA92FB200BD7117 /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Masonry.framework; sourceTree = "<group>"; };
-		428B58DD1CA50EB90068DA9B /* EUExBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBase.h; sourceTree = "<group>"; };
-		428B58DE1CA50EB90068DA9B /* EUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUtility.h; sourceTree = "<group>"; };
 		428B58E01CA50EB90068DA9B /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		428B58E11CA50EB90068DA9B /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
 		428B58E21CA50EB90068DA9B /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		42CEF76E1CA665AC0056247A /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		42CEF77F1CA688E20056247A /* uexDemoPluginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uexDemoPluginViewController.h; sourceTree = "<group>"; };
 		42CEF7801CA688E20056247A /* uexDemoPluginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = uexDemoPluginViewController.m; sourceTree = "<group>"; };
+		42D7F74A1CFFCE3800447B4C /* AppCanKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCanKit.framework; sourceTree = "<group>"; };
 		42FCA0911CA4CB0700DF3E3E /* libuexDemoPlugin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libuexDemoPlugin.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FCA0941CA4CB0700DF3E3E /* EUExDemoPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EUExDemoPlugin.h; sourceTree = "<group>"; };
 		42FCA0961CA4CB0700DF3E3E /* EUExDemoPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EUExDemoPlugin.m; sourceTree = "<group>"; };
@@ -83,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4267EE0F1CA92FB200BD7117 /* Masonry.framework in Frameworks */,
+				42D7F74B1CFFCE3800447B4C /* AppCanKit.framework in Frameworks */,
 				4267EE0C1CA92F4C00BD7117 /* libSVProgressHUD.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,15 +110,6 @@
 				4267EE0D1CA92F5A00BD7117 /* SVProgressHUD.bundle */,
 			);
 			path = libs;
-			sourceTree = "<group>";
-		};
-		428B58DC1CA50EB90068DA9B /* engineHeader */ = {
-			isa = PBXGroup;
-			children = (
-				428B58DD1CA50EB90068DA9B /* EUExBase.h */,
-				428B58DE1CA50EB90068DA9B /* EUtility.h */,
-			);
-			path = engineHeader;
 			sourceTree = "<group>";
 		};
 		428B58DF1CA50EB90068DA9B /* JSON */ = {
@@ -166,9 +158,9 @@
 		42FCA0931CA4CB0700DF3E3E /* EUExDemoPlugin */ = {
 			isa = PBXGroup;
 			children = (
+				42D7F74A1CFFCE3800447B4C /* AppCanKit.framework */,
 				4267EE091CA92F3B00BD7117 /* libs */,
 				42CEF76A1CA665110056247A /* sourceCode */,
-				428B58DC1CA50EB90068DA9B /* engineHeader */,
 				428B58DF1CA50EB90068DA9B /* JSON */,
 				42FCA0941CA4CB0700DF3E3E /* EUExDemoPlugin.h */,
 				42FCA0961CA4CB0700DF3E3E /* EUExDemoPlugin.m */,
@@ -203,6 +195,7 @@
 				42FCA08D1CA4CB0700DF3E3E /* Sources */,
 				42FCA08E1CA4CB0700DF3E3E /* Frameworks */,
 				42FCA08F1CA4CB0700DF3E3E /* CopyFiles */,
+				42A9F6381CFD3419002710FC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -262,6 +255,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		42A9F6381CFD3419002710FC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "productPath=${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${EXECUTABLE_NAME}\ncp -f $productPath ${SRCROOT}/uexDemoPlugin/";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4267EDCF1CA9048500BD7117 /* Sources */ = {
@@ -422,10 +431,12 @@
 		42FCA09B1CA4CB0700DF3E3E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexDemoPlugin";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EUExDemoPlugin/libs",
+					"$(PROJECT_DIR)/EUExDemoPlugin",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = $SRCROOT/EUExDemoPlugin/sourceCode/PrefixHeader.pch;
@@ -443,10 +454,12 @@
 		42FCA09C1CA4CB0700DF3E3E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexDemoPlugin";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EUExDemoPlugin/libs",
+					"$(PROJECT_DIR)/EUExDemoPlugin",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = $SRCROOT/EUExDemoPlugin/sourceCode/PrefixHeader.pch;

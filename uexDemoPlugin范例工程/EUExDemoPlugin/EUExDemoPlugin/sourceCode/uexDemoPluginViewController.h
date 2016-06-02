@@ -20,6 +20,15 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+#ifdef SHORT_ENABLE
+#define SHORT_FUNC(short,origin) \
+    FOUNDATION_STATIC_INLINE short{\
+        return (origin);\
+}
+#else
+#define SHORT_FUNC(short,origin)
+#endif
+
 
 
 
@@ -28,6 +37,9 @@
 @interface uexDemoPluginViewController : UIViewController
 
 - (instancetype)initWithEUExObj:(EUExDemoPlugin *)euexObj;
+
+
+
 
 @end
 

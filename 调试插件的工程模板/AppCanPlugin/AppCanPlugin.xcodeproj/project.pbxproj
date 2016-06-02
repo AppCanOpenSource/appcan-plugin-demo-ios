@@ -22,6 +22,7 @@
 		428629001C0709BF0078E783 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 428628FF1C0709BF0078E783 /* pop.framework */; };
 		42D0AF461BBB879C002249AE /* AppCanEngineLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42D0AF481BBB879C002249AE /* AppCanEngineLocalization.strings */; };
 		42D0AF551BBBAA0D002249AE /* libAppCanEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D0AF541BBBAA0D002249AE /* libAppCanEngine.a */; };
+		42D7F7351CFFCA9600447B4C /* AppCanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D7F7341CFFCA9600447B4C /* AppCanKit.framework */; };
 		42F6E8E41C5749E70073C6E0 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F6E8E31C5749E70073C6E0 /* JavaScriptCore.framework */; };
 		42FFC8021B625EC60058E363 /* PackageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FFC8011B625EC60058E363 /* PackageInfo.m */; };
 		42FFEF421C200F9400294DE1 /* Ono.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FFEF411C200F9400294DE1 /* Ono.framework */; };
@@ -96,11 +97,22 @@
 		42D0AF471BBB879C002249AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AppCanEngineLocalization.strings; sourceTree = "<group>"; };
 		42D0AF491BBB879D002249AE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AppCanEngineLocalization.strings"; sourceTree = "<group>"; };
 		42D0AF541BBBAA0D002249AE /* libAppCanEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppCanEngine.a; sourceTree = "<group>"; };
+		42D7F7341CFFCA9600447B4C /* AppCanKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCanKit.framework; sourceTree = "<group>"; };
 		42F6E8E31C5749E70073C6E0 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		42FFC8001B625EC60058E363 /* PackageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageInfo.h; sourceTree = "<group>"; };
 		42FFC8011B625EC60058E363 /* PackageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageInfo.m; sourceTree = "<group>"; };
 		42FFEF411C200F9400294DE1 /* Ono.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Ono.framework; sourceTree = "<group>"; };
 		46D6D7B316F1CB3800D8E883 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		6C9017BD159992B90034AA19 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		6C9017BF159992B90034AA19 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
+		6C9017C0159992B90034AA19 /* NSCharacterSet_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCharacterSet_Extensions.h; sourceTree = "<group>"; };
+		6C9017C1159992B90034AA19 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		6C9017C2159992B90034AA19 /* NSScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSScanner_Extensions.h; sourceTree = "<group>"; };
+		6C9017C4159992B90034AA19 /* CJSONDataSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDataSerializer.h; sourceTree = "<group>"; };
+		6C9017C5159992B90034AA19 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		6C9017C6159992B90034AA19 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		6C9017C7159992B90034AA19 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		6C9017C8159992B90034AA19 /* CSerializedJSONData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSerializedJSONData.h; sourceTree = "<group>"; };
 		6CC60331157DCC0F00A3E13E /* AppCanPlugin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppCanPlugin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CC60339157DCC0F00A3E13E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6CC6033D157DCC0F00A3E13E /* AppCanPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppCanPlugin-Info.plist"; sourceTree = "<group>"; };
@@ -135,10 +147,14 @@
 		6CC6038D157DCD9300A3E13E /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
 		6CC6038E157DCD9300A3E13E /* plugin.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = plugin.xml; sourceTree = "<group>"; };
 		6CC6038F157DCD9300A3E13E /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
+		6CC603A2157DD4D800A3E13E /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		6CC603A7157DD65E00A3E13E /* WidgetOnePseudoDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetOnePseudoDelegate.h; sourceTree = "<group>"; };
 		6CC603A8157DD65E00A3E13E /* WidgetOnePseudoDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WidgetOnePseudoDelegate.m; sourceTree = "<group>"; };
 		6CC60441157DCC0F00A3E13E /* Beqtucontent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Beqtucontent.m; sourceTree = "<group>"; };
 		6CC604A7157DD65E00A3E13E /* Beqtucontent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beqtucontent.h; sourceTree = "<group>"; };
+		6CD1DC32159ADD8A003C3083 /* EUExBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBase.h; sourceTree = "<group>"; };
+		6CD1DC33159ADD8A003C3083 /* EUExBaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBaseDefine.h; sourceTree = "<group>"; };
+		6CD1DC34159ADD8A003C3083 /* EUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUtility.h; sourceTree = "<group>"; };
 		6CD1DC36159ADD8A003C3083 /* WidgetOneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetOneDelegate.h; sourceTree = "<group>"; };
 		B2403BF61833923A002530F6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B2403BF818339267002530F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -165,6 +181,7 @@
 				420041891BABCD45000A57F5 /* libbz2.1.0.tbd in Frameworks */,
 				420041871BABCD3C000A57F5 /* libc++.tbd in Frameworks */,
 				420041851BABCD33000A57F5 /* libresolv.tbd in Frameworks */,
+				42D7F7351CFFCA9600447B4C /* AppCanKit.framework in Frameworks */,
 				420041831BABCD27000A57F5 /* libstdc++.6.0.9.tbd in Frameworks */,
 				F72F4A241986243F008FB4E6 /* UIKit.framework in Frameworks */,
 				DE94A2DB18F7CE48000CA6E7 /* Foundation.framework in Frameworks */,
@@ -215,6 +232,40 @@
 				428628FF1C0709BF0078E783 /* pop.framework */,
 			);
 			path = uexFrameworks;
+			sourceTree = "<group>";
+		};
+		6C9017BC159992B90034AA19 /* TouchJSON */ = {
+			isa = PBXGroup;
+			children = (
+				6C9017BD159992B90034AA19 /* CDataScanner.h */,
+				6C9017BE159992B90034AA19 /* Extensions */,
+				6C9017C3159992B90034AA19 /* JSON */,
+			);
+			name = TouchJSON;
+			path = ../../../../ACCode/Classes/commonCode/header/TouchJSON;
+			sourceTree = "<group>";
+		};
+		6C9017BE159992B90034AA19 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6C9017BF159992B90034AA19 /* CDataScanner_Extensions.h */,
+				6C9017C0159992B90034AA19 /* NSCharacterSet_Extensions.h */,
+				6C9017C1159992B90034AA19 /* NSDictionary_JSONExtensions.h */,
+				6C9017C2159992B90034AA19 /* NSScanner_Extensions.h */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6C9017C3159992B90034AA19 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				6C9017C4159992B90034AA19 /* CJSONDataSerializer.h */,
+				6C9017C5159992B90034AA19 /* CJSONDeserializer.h */,
+				6C9017C6159992B90034AA19 /* CJSONScanner.h */,
+				6C9017C7159992B90034AA19 /* CJSONSerializer.h */,
+				6C9017C8159992B90034AA19 /* CSerializedJSONData.h */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		6CC60326157DCC0F00A3E13E = {
@@ -324,7 +375,11 @@
 		6CC60388157DCD0B00A3E13E /* engine */ = {
 			isa = PBXGroup;
 			children = (
+				42D7F7341CFFCA9600447B4C /* AppCanKit.framework */,
 				42D0AF541BBBAA0D002249AE /* libAppCanEngine.a */,
+				6CD1DC32159ADD8A003C3083 /* EUExBase.h */,
+				6CD1DC33159ADD8A003C3083 /* EUExBaseDefine.h */,
+				6CD1DC34159ADD8A003C3083 /* EUtility.h */,
 				6CD1DC36159ADD8A003C3083 /* WidgetOneDelegate.h */,
 			);
 			path = engine;
@@ -333,6 +388,8 @@
 		6CC60389157DCD0B00A3E13E /* engineHeader */ = {
 			isa = PBXGroup;
 			children = (
+				6C9017BC159992B90034AA19 /* TouchJSON */,
+				6CC603A2157DD4D800A3E13E /* JSON.h */,
 			);
 			path = engineHeader;
 			sourceTree = "<group>";

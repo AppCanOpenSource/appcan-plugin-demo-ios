@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <uexplugins>
     <plugin
-        uexName="uexDemoPlugin" version="3.0.1" build="1">
-        <info>1:添加其他开发说明的示例代码</info>
+        uexName="uexDemoPlugin" version="4.0.2" build="2">
+        <info>2:添加异步回调匿名函数的示例</info>
+        <build>1:添加其他开发说明的示例代码</build>
         <build>0:AppCan iOS插件范例</build>
     </plugin>
 </uexplugins>

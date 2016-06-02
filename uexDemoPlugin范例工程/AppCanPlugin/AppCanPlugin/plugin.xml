@@ -5,6 +5,7 @@
         <method name="sendValue"></method>
         <method name="sendJSONValue"></method>
         <method name="doCallback"></method>
+        <method name="doCallbackWithFunction"></method>
         <method name="doSyncCallback" sync="true"></method>
         <method name="addView"></method>
         <method name="removeView"></method>

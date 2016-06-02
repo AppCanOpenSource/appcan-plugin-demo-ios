@@ -30,7 +30,9 @@
                 <input class="btn" type="button" value="sendValue" onclick="sendValue();"/><br>
                 <input class="btn" type="button" value="sendJSONValue" onclick="sendJSONValue();"/><br>
                 <input class="btn" type="button" value="doCallback" onclick="doCallback();"/><br>
+                <input class="btn" type="button" value="doCallbackWithFunction" onclick="doCallbackWithFunction();"/><br>
                 <input class="btn" type="button" value="doSyncCallback" onclick="doSyncCallback();"/><br>
+                
                 <input class="btn" type="button" value="返回" onclick="uexWindow.close(-1);"/>
             </div>
             <!--content结束-->
@@ -81,6 +83,13 @@ var sendJSONValue = function(){
 var doCallback = function(){
     uexDemoPlugin.doCallback();
 }
+
+var doCallbackWithFunction = function(){
+    uexDemoPlugin.doCallbackWithFunction("string",[1,2],function(data){
+                                         showDetails(data,data[0],data[2]);
+                                         });
+}
+
 
 var doSyncCallback = function(){
     //将获取返回值复制给obj

@@ -29,6 +29,8 @@
 @property (nonatomic,weak)EUExDemoPlugin *euexObj;
 @end
 
+
+
 @implementation uexDemoPluginViewController
 
 
@@ -69,8 +71,8 @@
     }];
     
     //获取插件的bundle实例
-    NSBundle *pluginBundle = [EUtility bundleForPlugin:@"uexDemoPlugin"];
-    
+    //NSBundle *pluginBundle = [EUtility bundleForPlugin:@"uexDemoPlugin"];
+    NSBundle *pluginBundle = nil;
     //从bundle中读取资源图片文件的示例
     //直接用[pluginBundle pathForResource:@"sun" ofType:@"png"];只能匹配"sun.png"这个文件的路径，找不到会返回nil,而不会寻找文件"sun@2x.png"和"sun@3x.png".
     NSString *path = [[pluginBundle resourcePath] stringByAppendingPathComponent:@"sun.png"];
@@ -82,7 +84,7 @@
     
     //国际化字符串的示例
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 90, 60)];
-    label.text = [EUtility uexPlugin:@"uexDemoPlugin" localizedString:@"title"];
+    //label.text = [EUtility uexPlugin:@"uexDemoPlugin" localizedString:@"title"];
     label.textColor = [UIColor redColor];
     label.font = [UIFont systemFontOfSize:18];
     label.center = CGPointMake(250, 600);
