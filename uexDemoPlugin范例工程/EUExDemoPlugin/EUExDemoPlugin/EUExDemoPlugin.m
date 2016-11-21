@@ -22,9 +22,8 @@
  */
 
 #import "EUExDemoPlugin.h"
-#import "JSON.h"
 #import "uexDemoPluginViewController.h"
-@interface EUExDemoPlugin()
+@interface EUExDemoPlugin()<AppCanApplicationEventObserver>
 @property (nonatomic,strong)UIView *aView;
 @property (nonatomic,strong)uexDemoPluginViewController *aViewController;
 @end
@@ -38,7 +37,7 @@
 static NSDictionary *AppLaunchOptions;
 
 + (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    NSLog(@"app launched");
+    ACLogDebug(@"app launched");
     //存储launchOptions
     AppLaunchOptions = launchOptions;
     return YES;
@@ -48,9 +47,9 @@ static NSDictionary *AppLaunchOptions;
 //部分事件(比如application:didFinishLaunchingWithOptions:)触发时，第一个网页可能还没加载完成，因此无法当时回调给网页
 //这些回调应该延迟至这个事件触发时再回调给root页面
 + (void)rootPageDidFinishLoading{
-    NSString *jsStr = [NSString stringWithFormat:@"if(uexDemoPlugin.onAppLaunched){uexDemoPlugin.onAppLaunched('%@');}",[AppLaunchOptions JSONFragment]];
-    //在root页面执行JS脚本
-    [EUtility evaluatingJavaScriptInRootWnd:jsStr];
+    
+    //执行root页面的uexDemoPlugin.onAppLaunched方法 参数为AppLaunchOptions转换而成的JSON字符串
+    [AppCanRootWebViewEngine() callbackWithFunctionKeyPath:@"uexDemoPlugin.onAppLaunched" arguments:ACArgsPack([AppLaunchOptions ac_JSONFragment])];
     AppLaunchOptions = nil;
     
 }
@@ -58,18 +57,18 @@ static NSDictionary *AppLaunchOptions;
 
 #pragma mark - Life Cycle
 
-- (instancetype)initWithBrwView:(EBrowserView *)eInBrwView
-{
-    self = [super initWithBrwView:eInBrwView];
+- (instancetype)initWithWebViewEngine:(id<AppCanWebViewEngineObject>)engine{
+    self = [super initWithWebViewEngine:engine];
     if (self) {
-        NSLog(@"插件实例被创建");
+        ACLogDebug(@"插件实例被创建");
     }
     return self;
 }
 
+
 - (void)clean{
     [self dismissViewController];
-    NSLog(@"网页即将被销毁");
+    ACLogDebug(@"网页即将被销毁");
 }
 
 
@@ -78,16 +77,16 @@ static NSDictionary *AppLaunchOptions;
 
 - (void)helloWorld:(NSMutableArray *)inArguments{
     //打印 hello world!
-    NSLog(@"hello world!");
+    ACLogInfo(@"hello world!");
 }
 
 - (void)sendValue:(NSMutableArray *)inArguments{
     //打印传入的参数个数
-    NSLog(@"arguments count : %@",@(inArguments.count));
+    ACLogDebug(@"arguments count : %@",@(inArguments.count));
     //打印每个参数的描述，和参数所在的类的描述
     for (NSInteger i = 0; i < inArguments.count; i++) {
         id obj = inArguments[i];
-        NSLog(@"value : %@ , class : %@ ",[obj description],[[obj class] description]);
+        ACLogDebug(@"value : %@ , class : %@ ",[obj description],[[obj class] description]);
     }
 }
 
@@ -96,41 +95,36 @@ static NSDictionary *AppLaunchOptions;
         //当传入的参数为空时，直接返回，避免数组越界错误。
         return;
     }
-    id json = [inArguments[0] JSONValue];
-    NSLog(@"json : %@ class : %@",[json description],[[json class] description]);
+
+    id json = [inArguments[0] ac_JSONValue];
+    ACLogDebug(@"json : %@ class : %@",[json description],[[json class] description]);
 }
 
-//利用构造JS脚本进行JS回调的方法
-
-/*
-- (void)doCallback:(NSMutableArray *)inArguments{
-    NSDictionary *dict = @{
-                           @"key":@"value"
-                           };
-    //构造JavaScript脚本
-    //[dict JSONFragment] 可以把NSString NSDictionary NSArray 转换成JSON字符串
-    NSString *jsStr = [NSString stringWithFormat:@"if(uexDemoPlugin.cbDoCallback){uexDemoPlugin.cbDoCallback('%@')}",[dict JSONFragment]];
-    [EUtility brwView:self.meBrwView evaluateScript:jsStr];
-
-}
-*/
-
-//利用JavaScriptCore进行回调的方法
-//注意这种回调方式只支持3.3引擎
-
-- (void)doCallback:(NSMutableArray *)inArguments{
-    NSDictionary *dict = @{
-                           @"key":@"value"
-                           };
+- (void)sendArguments:(NSMutableArray *)inArguments{
+    ACArgsUnpack(NSString *arg1,NSNumber *arg2,NSArray *arg3,NSDictionary *arg4) = inArguments;
     
-    //构造参数数组
-    //[dict JSONFragment] 可以把NSString NSDictionary NSArray 转换成JSON字符串
-    NSArray * args = [NSArray arrayWithObjects:[dict JSONFragment],nil];
-    [EUtility browserView:self.meBrwView callbackWithFunctionKeyPath:@"uexDemoPlugin.cbDoCallback" arguments:args completion:^(JSValue *returnValue) {
-        if (returnValue) {
-            NSLog(@"回调成功!");
-        }
-    }];
+    for(id arg in @[arg1,arg2,arg3,arg4]){
+        ACLogDebug(@"value : %@ , class : %@ ",[arg description],[[arg class] description]);
+    }
+}
+
+
+
+
+
+
+
+- (void)doCallback:(NSMutableArray *)inArguments{
+    NSDictionary *dict = @{
+                           @"key":@"value"
+                           };
+    [self.webViewEngine callbackWithFunctionKeyPath:@"uexDemoPlugin.cbDoCallback"
+                                          arguments:ACArgsPack(dict.ac_JSONFragment)
+                                         completion:^(JSValue * _Nullable returnValue) {
+                                             if (returnValue) {
+                                                 ACLogDebug(@"回调成功!");
+                                             }
+                                         }];
 }
 
 
@@ -147,43 +141,42 @@ static NSDictionary *AppLaunchOptions;
 }
 
 
+- (void)doFunctionCallback:(NSMutableArray *)inArguments{
+    ACArgsUnpack(ACJSFunctionRef *callback) = inArguments;
+    [callback executeWithArguments:nil completionHandler:^(JSValue * _Nullable returnValue) {
+         ACLogDebug(@"回调成功!");
+    }];
+}
+
+
 - (void)addView:(NSMutableArray *)inArguments{
     if (self.aView) {
         //如果已经添加了view 直接返回
         return;
     }
-    if([inArguments count] < 1){
-        //参数不传 直接返回
-        return;
-    }
-    id info = [inArguments[0] JSONValue];
-    if(!info || ![info isKindOfClass:[NSDictionary class]]){
-        //参数解析后不是NSDictionary 直接返回
-        return;
-    }
-    if (!info[@"isScrollable"]) {
+    ACArgsUnpack(NSDictionary *info) = inArguments;
+    NSNumber *isScrollableNum = numberArg(info[@"isScrollable"]);
+    if (!isScrollableNum) {
         //如果参数信息不包含isScrollable这个键 直接返回
         return;
     }
-    
-    BOOL isScroll = [info[@"isScrollable"] boolValue];
+
+    BOOL isScroll = [isScrollableNum boolValue];
     //新建一个view，并将其背景设置为红色
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(10, 400, 300, 200)];
     view.backgroundColor = [UIColor redColor];
     if (isScroll) {
-        [EUtility brwView:self.meBrwView addSubviewToScrollView:view];
+        [[self.webViewEngine webScrollView] addSubview:view];
     }else{
-        [EUtility brwView:self.meBrwView addSubview:view];
+        [[self.webViewEngine webView] addSubview:view];
     }
     //插件对象持有此view,方便对其进行移除操作
     self.aView = view;
 }
 
 - (void)removeView:(NSMutableArray *)inArguments{
-    if (self.aView) {
-        [self.aView removeFromSuperview];
-        self.aView = nil;
-    }
+    [self.aView removeFromSuperview];
+    self.aView = nil;
 }
 
 - (void)presentController:(NSMutableArray *)inArguments{
@@ -191,45 +184,19 @@ static NSDictionary *AppLaunchOptions;
         return;
     }
     uexDemoPluginViewController *controller = [[uexDemoPluginViewController alloc]initWithEUExObj:self];
-    [EUtility brwView:self.meBrwView presentViewController:controller animated:YES completion:nil];
+    [[self.webViewEngine viewController]presentViewController:controller animated:YES completion:nil];
     self.aViewController = controller;
 }
 
 
 #pragma mark - Public Method
-/**
- *  异步回调方法的封装
- *
- *  @param funcName 回调函数名
- *  @param obj      回调的对象
- */
-- (void)callbackJSONWithName:(NSString *)funcName object:(id)obj{
-    //只有3.3引擎才支持此方法,需要先进行判断
-    if([EUtility respondsToSelector:@selector(browserView:callbackWithFunctionKeyPath:arguments:completion:)]){
-        
-        [EUtility browserView:self.meBrwView
-  callbackWithFunctionKeyPath:[NSString stringWithFormat:@"uexDemoPlugin.%@",funcName]
-                    arguments:[NSArray arrayWithObjects:[obj JSONFragment], nil]
-                   completion:nil];
-    }else{
-        
-        [EUtility uexPlugin:@"uexDemoPlugin"
-             callbackByName:funcName
-                 withObject:obj
-                    andType:uexPluginCallbackWithJsonString
-                   inTarget:self.meBrwView];
-    }
-
-}
 
 
 - (void)dismissViewController{
-    if (self.aViewController) {
-        [self.aViewController dismissViewControllerAnimated:YES completion:^{
-            [self callbackJSONWithName:@"onControllerClose" object:nil];
-            self.aViewController = nil;
-        }];
-    }
+    [self.aViewController dismissViewControllerAnimated:YES completion:^{
+        [self.webViewEngine callbackWithFunctionKeyPath:@"uexDemoPlugin.onControllerClose" arguments:nil];
+        self.aViewController = nil;
+    }];
 }
 
 @end

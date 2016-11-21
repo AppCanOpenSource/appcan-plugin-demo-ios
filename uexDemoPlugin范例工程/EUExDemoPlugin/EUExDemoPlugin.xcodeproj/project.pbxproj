@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		420F63D71DD40915007E477E /* AppCanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 420F63D61DD40915007E477E /* AppCanKit.framework */; };
 		4267EDF41CA919DD00BD7117 /* sun@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4267EDF21CA919DD00BD7117 /* sun@2x.png */; };
 		4267EDF51CA919DD00BD7117 /* sun@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4267EDF31CA919DD00BD7117 /* sun@3x.png */; };
 		4267EE031CA91FA000BD7117 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4267EE051CA91FA000BD7117 /* Localizable.strings */; };
@@ -43,6 +44,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		420F63D61DD40915007E477E /* AppCanKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCanKit.framework; sourceTree = "<group>"; };
 		4267EDD31CA9048500BD7117 /* uexDemoPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uexDemoPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		4267EDF21CA919DD00BD7117 /* sun@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sun@2x.png"; sourceTree = "<group>"; };
 		4267EDF31CA919DD00BD7117 /* sun@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sun@3x.png"; sourceTree = "<group>"; };
@@ -52,8 +54,6 @@
 		4267EE0B1CA92F4C00BD7117 /* libSVProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSVProgressHUD.a; sourceTree = "<group>"; };
 		4267EE0D1CA92F5A00BD7117 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		4267EE0E1CA92FB200BD7117 /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Masonry.framework; sourceTree = "<group>"; };
-		428B58DD1CA50EB90068DA9B /* EUExBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBase.h; sourceTree = "<group>"; };
-		428B58DE1CA50EB90068DA9B /* EUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUtility.h; sourceTree = "<group>"; };
 		428B58E01CA50EB90068DA9B /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		428B58E11CA50EB90068DA9B /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
 		428B58E21CA50EB90068DA9B /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
@@ -83,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4267EE0F1CA92FB200BD7117 /* Masonry.framework in Frameworks */,
+				420F63D71DD40915007E477E /* AppCanKit.framework in Frameworks */,
 				4267EE0C1CA92F4C00BD7117 /* libSVProgressHUD.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,15 +110,6 @@
 				4267EE0D1CA92F5A00BD7117 /* SVProgressHUD.bundle */,
 			);
 			path = libs;
-			sourceTree = "<group>";
-		};
-		428B58DC1CA50EB90068DA9B /* engineHeader */ = {
-			isa = PBXGroup;
-			children = (
-				428B58DD1CA50EB90068DA9B /* EUExBase.h */,
-				428B58DE1CA50EB90068DA9B /* EUtility.h */,
-			);
-			path = engineHeader;
 			sourceTree = "<group>";
 		};
 		428B58DF1CA50EB90068DA9B /* JSON */ = {
@@ -166,9 +158,9 @@
 		42FCA0931CA4CB0700DF3E3E /* EUExDemoPlugin */ = {
 			isa = PBXGroup;
 			children = (
+				420F63D61DD40915007E477E /* AppCanKit.framework */,
 				4267EE091CA92F3B00BD7117 /* libs */,
 				42CEF76A1CA665110056247A /* sourceCode */,
-				428B58DC1CA50EB90068DA9B /* engineHeader */,
 				428B58DF1CA50EB90068DA9B /* JSON */,
 				42FCA0941CA4CB0700DF3E3E /* EUExDemoPlugin.h */,
 				42FCA0961CA4CB0700DF3E3E /* EUExDemoPlugin.m */,
@@ -220,7 +212,7 @@
 		42FCA0891CA4CB0700DF3E3E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = AppCan;
 				TargetAttributes = {
 					4267EDD21CA9048500BD7117 = {
@@ -341,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -351,8 +344,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -374,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -385,6 +380,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -395,8 +391,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -412,7 +410,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -426,10 +424,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EUExDemoPlugin/libs",
+					"$(PROJECT_DIR)/EUExDemoPlugin",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = $SRCROOT/EUExDemoPlugin/sourceCode/PrefixHeader.pch;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EUExDemoPlugin/libs",
@@ -447,10 +446,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EUExDemoPlugin/libs",
+					"$(PROJECT_DIR)/EUExDemoPlugin",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = $SRCROOT/EUExDemoPlugin/sourceCode/PrefixHeader.pch;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EUExDemoPlugin/libs",

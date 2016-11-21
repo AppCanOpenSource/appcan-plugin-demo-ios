@@ -4,8 +4,10 @@
         <method name="helloWorld"></method>
         <method name="sendValue"></method>
         <method name="sendJSONValue"></method>
+        <method name="sendArguments"></method>
         <method name="doCallback"></method>
-        <method name="doSyncCallback" sync="true"></method>
+        <method name="doSyncCallback"></method>
+        <method name="doFunctionCallback"></method>
         <method name="addView"></method>
         <method name="removeView"></method>
         <method name="presentController"></method>

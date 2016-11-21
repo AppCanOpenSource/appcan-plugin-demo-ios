@@ -19,6 +19,8 @@
 		420041911BABCD6F000A57F5 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 420041901BABCD6F000A57F5 /* libstdc++.tbd */; };
 		420041931BABCD79000A57F5 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 420041921BABCD79000A57F5 /* libxml2.tbd */; };
 		420041951BABCD80000A57F5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 420041941BABCD80000A57F5 /* libz.tbd */; };
+		420F63DC1DD409A1007E477E /* AppCanEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 420F63D91DD409A1007E477E /* AppCanEngine.framework */; };
+		420F63DD1DD409A1007E477E /* AppCanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 420F63DA1DD409A1007E477E /* AppCanKit.framework */; };
 		421890181CF3F84A004A29C3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE94A2D418F7CD91000CA6E7 /* CoreText.framework */; };
 		421890191CF3F84A004A29C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE94A2DA18F7CE48000CA6E7 /* Foundation.framework */; };
 		4218901A1CF3F84A004A29C3 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE94A2D618F7CD9B000CA6E7 /* ImageIO.framework */; };
@@ -26,14 +28,17 @@
 		4267EDFC1CA91AFB00BD7117 /* uexDemoPlugin.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4267EDFB1CA91AFB00BD7117 /* uexDemoPlugin.bundle */; };
 		4267EE111CA9312600BD7117 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4267EE101CA9312600BD7117 /* SVProgressHUD.bundle */; };
 		4267EE171CA9316700BD7117 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4267EE161CA9316700BD7117 /* Masonry.framework */; };
-		428629001C0709BF0078E783 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 428628FF1C0709BF0078E783 /* pop.framework */; };
 		42D0AF461BBB879C002249AE /* AppCanEngineLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42D0AF481BBB879C002249AE /* AppCanEngineLocalization.strings */; };
-		42D0AF551BBBAA0D002249AE /* libAppCanEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D0AF541BBBAA0D002249AE /* libAppCanEngine.a */; };
 		42F6E8E41C5749E70073C6E0 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F6E8E31C5749E70073C6E0 /* JavaScriptCore.framework */; };
 		42FCA0DF1CA4D4E200DF3E3E /* libuexDemoPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FCA0D91CA4D1E200DF3E3E /* libuexDemoPlugin.a */; };
+		42FD50EF1DD40ADA00DA4BE0 /* Ono.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FD50ED1DD40ADA00DA4BE0 /* Ono.framework */; };
+		42FD50F01DD40ADA00DA4BE0 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FD50EE1DD40ADA00DA4BE0 /* pop.framework */; };
+		42FD50F21DD40AF800DA4BE0 /* Ono.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42FD50ED1DD40ADA00DA4BE0 /* Ono.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42FD50F31DD40AF800DA4BE0 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42FD50EE1DD40ADA00DA4BE0 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42FD50F41DD40AF800DA4BE0 /* AppCanEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 420F63D91DD409A1007E477E /* AppCanEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42FD50F51DD40AF800DA4BE0 /* AppCanKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 420F63DA1DD409A1007E477E /* AppCanKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42FD50F61DD40AF800DA4BE0 /* AppCanKitSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 420F63DB1DD409A1007E477E /* AppCanKitSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42FFC8021B625EC60058E363 /* PackageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FFC8011B625EC60058E363 /* PackageInfo.m */; };
-		42FFEF421C200F9400294DE1 /* Ono.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FFEF411C200F9400294DE1 /* Ono.framework */; };
-		46D6D7B416F1CB3800D8E883 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46D6D7B316F1CB3800D8E883 /* StoreKit.framework */; };
 		6CC6033A157DCC0F00A3E13E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC60339157DCC0F00A3E13E /* CoreGraphics.framework */; };
 		6CC60340157DCC0F00A3E13E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6CC6033E157DCC0F00A3E13E /* InfoPlist.strings */; };
 		6CC60342157DCC0F00A3E13E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC60341157DCC0F00A3E13E /* main.m */; };
@@ -101,6 +106,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				42FD50F21DD40AF800DA4BE0 /* Ono.framework in Embed Frameworks */,
+				42FD50F31DD40AF800DA4BE0 /* pop.framework in Embed Frameworks */,
+				42FD50F41DD40AF800DA4BE0 /* AppCanEngine.framework in Embed Frameworks */,
+				42FD50F51DD40AF800DA4BE0 /* AppCanKit.framework in Embed Frameworks */,
+				42FD50F61DD40AF800DA4BE0 /* AppCanKitSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,19 +130,20 @@
 		420041901BABCD6F000A57F5 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		420041921BABCD79000A57F5 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		420041941BABCD80000A57F5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		420F63D91DD409A1007E477E /* AppCanEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCanEngine.framework; sourceTree = "<group>"; };
+		420F63DA1DD409A1007E477E /* AppCanKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCanKit.framework; sourceTree = "<group>"; };
+		420F63DB1DD409A1007E477E /* AppCanKitSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCanKitSwift.framework; sourceTree = "<group>"; };
 		4267EDFB1CA91AFB00BD7117 /* uexDemoPlugin.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = uexDemoPlugin.bundle; path = ../../../EUExDemoPlugin/uexDemoPlugin/uexDemoPlugin.bundle; sourceTree = "<group>"; };
 		4267EE101CA9312600BD7117 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = ../../../EUExDemoPlugin/EUExDemoPlugin/libs/SVProgressHUD.bundle; sourceTree = "<group>"; };
 		4267EE161CA9316700BD7117 /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Masonry.framework; sourceTree = "<group>"; };
-		428628FF1C0709BF0078E783 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pop.framework; sourceTree = "<group>"; };
 		42D0AF471BBB879C002249AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AppCanEngineLocalization.strings; sourceTree = "<group>"; };
 		42D0AF491BBB879D002249AE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AppCanEngineLocalization.strings"; sourceTree = "<group>"; };
-		42D0AF541BBBAA0D002249AE /* libAppCanEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppCanEngine.a; sourceTree = "<group>"; };
 		42F6E8E31C5749E70073C6E0 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		42FCA0D41CA4D1E200DF3E3E /* EUExDemoPlugin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EUExDemoPlugin.xcodeproj; path = ../EUExDemoPlugin/EUExDemoPlugin.xcodeproj; sourceTree = "<group>"; };
+		42FD50ED1DD40ADA00DA4BE0 /* Ono.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Ono.framework; sourceTree = "<group>"; };
+		42FD50EE1DD40ADA00DA4BE0 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pop.framework; sourceTree = "<group>"; };
 		42FFC8001B625EC60058E363 /* PackageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageInfo.h; sourceTree = "<group>"; };
 		42FFC8011B625EC60058E363 /* PackageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageInfo.m; sourceTree = "<group>"; };
-		42FFEF411C200F9400294DE1 /* Ono.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Ono.framework; sourceTree = "<group>"; };
-		46D6D7B316F1CB3800D8E883 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6CC60331157DCC0F00A3E13E /* AppCanPlugin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppCanPlugin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CC60339157DCC0F00A3E13E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6CC6033D157DCC0F00A3E13E /* AppCanPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppCanPlugin-Info.plist"; sourceTree = "<group>"; };
@@ -198,6 +209,7 @@
 				4200418B1BABCD53000A57F5 /* libiconv.tbd in Frameworks */,
 				420041891BABCD45000A57F5 /* libbz2.1.0.tbd in Frameworks */,
 				420041871BABCD3C000A57F5 /* libc++.tbd in Frameworks */,
+				42FD50F01DD40ADA00DA4BE0 /* pop.framework in Frameworks */,
 				420041851BABCD33000A57F5 /* libresolv.tbd in Frameworks */,
 				420041831BABCD27000A57F5 /* libstdc++.6.0.9.tbd in Frameworks */,
 				F72F4A241986243F008FB4E6 /* UIKit.framework in Frameworks */,
@@ -205,13 +217,10 @@
 				4218901B1CF3F84A004A29C3 /* QuickLook.framework in Frameworks */,
 				4218901A1CF3F84A004A29C3 /* ImageIO.framework in Frameworks */,
 				421890181CF3F84A004A29C3 /* CoreText.framework in Frameworks */,
-				46D6D7B416F1CB3800D8E883 /* StoreKit.framework in Frameworks */,
 				6CC6033A157DCC0F00A3E13E /* CoreGraphics.framework in Frameworks */,
 				6CC6036B157DCCEF00A3E13E /* MediaPlayer.framework in Frameworks */,
-				428629001C0709BF0078E783 /* pop.framework in Frameworks */,
 				6CC6036C157DCCEF00A3E13E /* MessageUI.framework in Frameworks */,
 				6CC6036D157DCCEF00A3E13E /* MapKit.framework in Frameworks */,
-				42D0AF551BBBAA0D002249AE /* libAppCanEngine.a in Frameworks */,
 				6CC60372157DCCEF00A3E13E /* Accelerate.framework in Frameworks */,
 				6CC60373157DCCEF00A3E13E /* AddressBook.framework in Frameworks */,
 				6CC60374157DCCEF00A3E13E /* AddressBookUI.framework in Frameworks */,
@@ -227,11 +236,13 @@
 				6CC6037E157DCCEF00A3E13E /* CoreVideo.framework in Frameworks */,
 				6CC6037F157DCCEF00A3E13E /* MobileCoreServices.framework in Frameworks */,
 				6CC60380157DCCEF00A3E13E /* OpenAL.framework in Frameworks */,
+				420F63DD1DD409A1007E477E /* AppCanKit.framework in Frameworks */,
 				6CC60381157DCCEF00A3E13E /* OpenGLES.framework in Frameworks */,
 				6CC60382157DCCEF00A3E13E /* QuartzCore.framework in Frameworks */,
 				6CC60383157DCCEF00A3E13E /* Security.framework in Frameworks */,
 				6CC60384157DCCEF00A3E13E /* SystemConfiguration.framework in Frameworks */,
-				42FFEF421C200F9400294DE1 /* Ono.framework in Frameworks */,
+				420F63DC1DD409A1007E477E /* AppCanEngine.framework in Frameworks */,
+				42FD50EF1DD40ADA00DA4BE0 /* Ono.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +261,9 @@
 		469DCDD0166EFA5100FC2F72 /* uexFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42FD50ED1DD40ADA00DA4BE0 /* Ono.framework */,
+				42FD50EE1DD40ADA00DA4BE0 /* pop.framework */,
 				4267EE161CA9316700BD7117 /* Masonry.framework */,
-				42FFEF411C200F9400294DE1 /* Ono.framework */,
-				428628FF1C0709BF0078E783 /* pop.framework */,
 			);
 			path = uexFrameworks;
 			sourceTree = "<group>";
@@ -316,7 +327,6 @@
 				6CC60364157DCCEF00A3E13E /* QuartzCore.framework */,
 				DE94A2D818F7CE12000CA6E7 /* QuickLook.framework */,
 				6CC60365157DCCEF00A3E13E /* Security.framework */,
-				46D6D7B316F1CB3800D8E883 /* StoreKit.framework */,
 				6CC60366157DCCEF00A3E13E /* SystemConfiguration.framework */,
 				6CC60367157DCCEF00A3E13E /* UIKit.framework */,
 				6CC60339157DCC0F00A3E13E /* CoreGraphics.framework */,
@@ -365,7 +375,9 @@
 		6CC60388157DCD0B00A3E13E /* engine */ = {
 			isa = PBXGroup;
 			children = (
-				42D0AF541BBBAA0D002249AE /* libAppCanEngine.a */,
+				420F63D91DD409A1007E477E /* AppCanEngine.framework */,
+				420F63DA1DD409A1007E477E /* AppCanKit.framework */,
+				420F63DB1DD409A1007E477E /* AppCanKitSwift.framework */,
 				6CD1DC36159ADD8A003C3083 /* WidgetOneDelegate.h */,
 			);
 			path = engine;
@@ -422,8 +434,19 @@
 		6CC60328157DCC0F00A3E13E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = zywx;
+				TargetAttributes = {
+					6CC60330157DCC0F00A3E13E = {
+						DevelopmentTeam = MMWCPWYKS6;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = 6CC6032B157DCC0F00A3E13E /* Build configuration list for PBXProject "AppCanPlugin" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -545,17 +568,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -572,7 +598,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 arm64";
@@ -583,12 +610,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -603,7 +632,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -615,12 +644,12 @@
 		6CC6034A157DCC0F00A3E13E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MMWCPWYKS6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -632,7 +661,7 @@
 				GCC_PREFIX_HEADER = "AppCanPlugin/AppCanPlugin-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "AppCanPlugin/AppCanPlugin-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/AppCanPlugin/engine\"",
@@ -652,12 +681,12 @@
 		6CC6034B157DCC0F00A3E13E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MMWCPWYKS6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -669,7 +698,7 @@
 				GCC_PREFIX_HEADER = "AppCanPlugin/AppCanPlugin-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "AppCanPlugin/AppCanPlugin-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/AppCanPlugin/engine\"",
@@ -690,12 +719,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -710,7 +741,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -723,12 +754,12 @@
 		7EDE104515D118BA00C21FC7 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MMWCPWYKS6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -740,7 +771,7 @@
 				GCC_PREFIX_HEADER = "AppCanPlugin/AppCanPlugin-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "AppCanPlugin/AppCanPlugin-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/AppCanPlugin/engine\"",

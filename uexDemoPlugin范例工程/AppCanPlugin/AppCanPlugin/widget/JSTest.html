@@ -29,8 +29,10 @@
                 <input class="btn" type="button" value="helloWorld" onclick="helloWorld();"/><br>
                 <input class="btn" type="button" value="sendValue" onclick="sendValue();"/><br>
                 <input class="btn" type="button" value="sendJSONValue" onclick="sendJSONValue();"/><br>
+                <input class="btn" type="button" value="sendArguments" onclick="sendArguments();"/><br>
                 <input class="btn" type="button" value="doCallback" onclick="doCallback();"/><br>
                 <input class="btn" type="button" value="doSyncCallback" onclick="doSyncCallback();"/><br>
+                <input class="btn" type="button" value="doFunctionCallback" onclick="doFunctionCallback();"/><br>
                 <input class="btn" type="button" value="返回" onclick="uexWindow.close(-1);"/>
             </div>
             <!--content结束-->
@@ -78,6 +80,11 @@ var sendJSONValue = function(){
     uexDemoPlugin.sendJSONValue(JSON.stringify(json));
 }
 
+var sendArguments = function(){
+    uexDemoPlugin.sendArguments(123,"45",JSON.stringify([6,7]),JSON.stringify({key: "value"}))
+}
+
+
 var doCallback = function(){
     uexDemoPlugin.doCallback();
 }
@@ -90,6 +97,13 @@ var doSyncCallback = function(){
     //查看obj的结构
     showDetails(obj,obj.key1,obj.key2,obj.key3.subKey);
 
+}
+
+var doFunctionCallback = function(){
+    uexDemoPlugin.doFunctionCallback(function(){
+                                     alert("function callback!");
+                                     });
+    
 }
 
 </script>
